@@ -1,1 +1,28 @@
-<p>aqui hay un registro</p>
+
+<div class="login-box">
+    <form [formGroup]="registerForm" class="login-form">
+        <h1 class="login-title">Crear una cuenta</h1>
+        <input class="login-input" formControlName="name" type="text" placeholder="Escribe tu nombre">
+        <br>
+        <input class="login-input" formControlName="lastName" type="text" placeholder="Escribe tu apellido paterno">
+        <br>
+        <input class="login-input" formControlName="secondLastName" type="text" placeholder="Escribe tu aepllido materno">
+        <br>
+        <input class="login-input" formControlName="email" type="email" placeholder="Escribe tu correro electronico">
+        <br>
+        <input class="login-input" formControlName="password" type="text" placeholder="Escribe tu contraseña">
+        <br>
+        <input class="login-input" formControlName="confirmPassword" type="text" placeholder="Repite tu contraseña">
+        <br>
+        <input class="login-input" formControlName="phone" type="number" placeholder="Escribe tu numero telefonico">
+        <br>
+        <input class="login-input" formControlName="genre" type="text" placeholder="Seleciona tu genero">
+        <br>
+        <input class="login-input" formControlName="medicaSpecialisation" type="text" placeholder="Selecciona tu especialidad medica">
+        <br>
+        <input class="login-input" formControlName="medicalCenter" type="text" placeholder="Escribe el nombre del centro medico donde trabajas">
+        </form>
+      </div>
+      <div class="login-box"><Button type="submit" class="login-buttom" (click)="registerbutton()">Registrarse</Button>
+      <div><a style="padding-left: 20px;" routerLink="/login">Ya tienes una cuenta? Inicia sesion.</a></div>
+      </div>

@@ -9,6 +9,8 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     LoginPageComponent,
     RegisterPageComponent,
     StartPageComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    HomePageComponent,
+    PageNotFoundComponent
     
   ],
   imports: [
