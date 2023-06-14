@@ -8,6 +8,6 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 })
 export class Tab1Page {
 
-  constructor(private barcodeScanner: BarcodeScanner) {}
+  constructor() {}
 
 }
