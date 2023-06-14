@@ -1,28 +1,28 @@
 
-<div class="login-box">
+<div class="register-box">
     <form [formGroup]="registerForm" class="login-form">
-        <h1 class="login-title">Crear una cuenta</h1>
-        <input class="login-input" formControlName="name" type="text" placeholder="Escribe tu nombre">
+        <h1 class="register-title">Crear una cuenta</h1>
+        <input class="register-input" formControlName="name" type="text" placeholder="Escribe tu nombre">
         <br>
-        <input class="login-input" formControlName="lastName" type="text" placeholder="Escribe tu apellido paterno">
+        <input class="register-input" formControlName="lastName" type="text" placeholder="Escribe tu apellido paterno">
         <br>
-        <input class="login-input" formControlName="secondLastName" type="text" placeholder="Escribe tu aepllido materno">
+        <input class="register-input" formControlName="secondLastName" type="text" placeholder="Escribe tu aepllido materno">
         <br>
-        <input class="login-input" formControlName="email" type="email" placeholder="Escribe tu correro electronico">
+        <input class="register-input" formControlName="email" type="email" placeholder="Escribe tu correro electronico">
         <br>
-        <input class="login-input" formControlName="password" type="text" placeholder="Escribe tu contraseña">
+        <input class="register-input" formControlName="password" type="text" placeholder="Escribe tu contraseña">
         <br>
-        <input class="login-input" formControlName="confirmPassword" type="text" placeholder="Repite tu contraseña">
+        <input class="register-input" formControlName="confirmPassword" type="text" placeholder="Repite tu contraseña">
         <br>
-        <input class="login-input" formControlName="phone" type="number" placeholder="Escribe tu numero telefonico">
+        <input class="register-input" formControlName="phone" type="number" placeholder="Escribe tu numero telefonico">
         <br>
-        <input class="login-input" formControlName="genre" type="text" placeholder="Seleciona tu genero">
+        <input class="register-input" formControlName="genre" type="text" placeholder="Seleciona tu genero">
         <br>
-        <input class="login-input" formControlName="medicaSpecialisation" type="text" placeholder="Selecciona tu especialidad medica">
+        <input class="register-input" formControlName="medicaSpecialisation" type="text" placeholder="Selecciona tu especialidad medica">
         <br>
-        <input class="login-input" formControlName="medicalCenter" type="text" placeholder="Escribe el nombre del centro medico donde trabajas">
+        <input class="register-input" formControlName="medicalCenter" type="text" placeholder="Escribe el nombre del centro medico donde trabajas">
         </form>
       </div>
-      <div class="login-box"><Button type="submit" class="login-buttom" (click)="registerbutton()">Registrarse</Button>
+      <div class="register-box"><Button type="submit" class="register-buttom" (click)="registerbutton()">Registrarse</Button>
       <div><a style="padding-left: 20px;" routerLink="/login">Ya tienes una cuenta? Inicia sesion.</a></div>
       </div>
