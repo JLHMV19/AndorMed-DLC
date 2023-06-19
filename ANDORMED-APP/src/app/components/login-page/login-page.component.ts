@@ -11,16 +11,16 @@ import { Component } from '@angular/core';
 export class LoginPageComponent {
 
   loginForm = new FormGroup({
-    user: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    correo: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('')
   });
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
-  login() {
+  loginButton() {
     console.log(this.loginForm.value);
     if(this.loginForm.valid){   //valida que el formulario sea valido y si lo es pasaremos a home
-      this.router.navigate(['start', this.loginForm.value]);
+      this.router.navigate(['/start', this.loginForm.value]);
     }else{
       alert('Formulario invalido');
     }
