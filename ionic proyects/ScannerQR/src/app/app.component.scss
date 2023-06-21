@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 576px) {
+  .menu {
+    flex-direction: column;
+  }
+}
