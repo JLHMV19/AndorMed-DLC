@@ -3,16 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ScannerComponent } from './components/scanner/scanner.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./components/home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'scanner',
-    pathMatch: 'full'
-  },
   { path : 'scanner', component : ScannerComponent},
+  { path: '', redirectTo: 'scanner', pathMatch: 'full' },
 ];
 
 @NgModule({

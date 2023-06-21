@@ -1,0 +1,49 @@
+.wrapper__scanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.video--container {
+  padding: 10px;
+}
+
+.video--container video {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.float-button {
+  float: right;
+  position: relative;
+  transform: translate(133px, 149px);
+  z-index: 999;
+}
+
+.qr-info {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.qr-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.qr-info p {
+  font-size: 16px;
+}
+
+.message--container {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.message--container a {
+  word-wrap: break-word;
+  word-break: break-all;
+}
