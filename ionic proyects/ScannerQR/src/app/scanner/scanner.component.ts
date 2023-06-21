@@ -3,8 +3,10 @@ import { VIDEO_CONFIG } from './scanner.const';
 import { timer, Subject } from 'rxjs';
 import { default as jsQR } from 'jsqr';
 import * as QRCode from 'qrcode';
-import {CommonModule, NgIf} from '@angular/common';
-
+import { CommonModule, NgIf } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, Inject } from '@angular/core';
+import { Plugins } from '@capacitor/core';
 
 
 @Component({
@@ -24,6 +26,8 @@ export class ScannerComponent implements AfterViewInit, OnDestroy {
   qrData: string | undefined;
   qrScanned: boolean = false;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngAfterViewInit(): void {
     this.prepareScanner();
   }
@@ -35,9 +39,11 @@ export class ScannerComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  currentFacingMode: 'environment' | 'user' = 'environment';
+
   changeCamera(): void {
-    let { facingMode } = this.config.video;
-    this.config.video.facingMode = facingMode === 'environment' ? 'user' : 'environment';
+    this.currentFacingMode = this.currentFacingMode === 'environment' ? 'user' : 'environment';
+    this.config.video.facingMode = this.currentFacingMode;
     this.startScanner();
   }
 
@@ -50,73 +56,78 @@ export class ScannerComponent implements AfterViewInit, OnDestroy {
       console.error('Error starting the scanner:', error);
     }
   }
+  
 
   spyCamera(): void {
     if (this.videoElement.nativeElement) {
       const { clientWidth, clientHeight } = this.videoElement.nativeElement;
       this.canvas.nativeElement.width = clientWidth;
       this.canvas.nativeElement.height = clientHeight;
-  
+
       const canvas = this.canvas.nativeElement.getContext('2d') as CanvasRenderingContext2D;
       canvas.drawImage(this.videoElement.nativeElement, 0, 0, clientWidth, clientHeight);
-  
+
       const inversionAttempts = 'dontInvert';
       const image = canvas.getImageData(0, 0, clientWidth, clientHeight);
       const qrcode = jsQR(image.data, image.width, clientHeight, { inversionAttempts });
-  
+
       if (qrcode) {
         const { data } = qrcode;
         this.qrData = data;
         this.qrScanned = true;
         console.log(data);
       }
-  
+
       // Continuar el escaneo en bucle
       setTimeout(() => {
         this.spyCamera();
       }, 500);
     }
   }
-  
+
   generateQRCode(): void {
     const text = 'https://www.example.com'; // Texto o enlace que deseas codificar en el QR
-  const options = {
-    width: 300, // Anchura en píxeles
-    height: 300, // Altura en píxeles
-  };
+    const options = {
+      width: 300, // Anchura en píxeles
+      height: 300, // Altura en píxeles
+    };
 
-QRCode.toDataURL(text, options, (err, url) => {
-  if (err) {
-    console.error('Error al generar el código QR:', err);
-  } else {
-    console.log('Código QR generado con éxito.');
-    console.log(url); // URL del código QR generado en formato de imagen base64
-  }
-});
-
+    QRCode.toDataURL(text, options, (err, url) => {
+      if (err) {
+        console.error('Error al generar el código QR:', err);
+      } else {
+        console.log('Código QR generado con éxito.');
+        console.log(url); // URL del código QR generado en formato de imagen base64
+      }
+    });
   }
 
   isURL(value: string): boolean {
     const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
     return urlPattern.test(value);
   }
-  
 
   async checkCamera(): Promise<boolean> {
     try {
-      const cameraPermissions = await navigator.permissions.query({ name: 'camera' } as any);
-      console.log(cameraPermissions);
-
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        if (stream) {
+          stream.getTracks().forEach((track) => track.stop());
+        }
+      }
+  
       const hasMediaDevice = 'mediaDevices' in navigator;
       const hasUserMedia = 'getUserMedia' in navigator.mediaDevices;
-      const isOk = cameraPermissions.state !== 'denied';
-
-      return hasMediaDevice && hasUserMedia && isOk;
+  
+      return hasMediaDevice && hasUserMedia;
     } catch (error) {
-      alert('Error al verificar la cámara:' + error);
+      alert('Error al verificar la cámara: ' + error);
       return false;
     }
   }
+  
+  
+  
 
   ngOnDestroy(): void {
     this.videoStream.getTracks().forEach((track) => track.stop());
