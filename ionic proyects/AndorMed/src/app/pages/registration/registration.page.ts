@@ -30,22 +30,26 @@ export class RegistrationPage implements OnInit {
     if (this.registrationForm.valid) {
       console.log(this.registrationForm.value);
       // Handle registration logic based on the selectedUserType
-      switch (this.selectedUserType) {
-        case 'patient':
-          // Handle patient registration
-          break;
-        case 'doctor':
-          // Handle doctor registration
-          break;
-        case 'admin':
-          // Handle admin registration
-          break;
-        default:
-          // Handle default case if necessary
-          break;
-      }
+      this.handleRegistration();
     } else {
       this.markFormGroupTouched(this.registrationForm);
+    }
+  }
+
+  handleRegistration() {
+    switch (this.selectedUserType) {
+      case 'patient':
+        this.registerPatient();
+        break;
+      case 'doctor':
+        this.registerDoctor();
+        break;
+      case 'admin':
+        this.registerAdmin();
+        break;
+      default:
+        // Handle default case if necessary
+        break;
     }
   }
 
@@ -53,5 +57,17 @@ export class RegistrationPage implements OnInit {
     Object.values(formGroup.controls).forEach(control => {
       control.markAsTouched();
     });
+  }
+
+  registerPatient() {
+    // Handle patient registration logic
+  }
+
+  registerDoctor() {
+    // Handle doctor registration logic
+  }
+
+  registerAdmin() {
+    // Handle admin registration logic
   }
 }
