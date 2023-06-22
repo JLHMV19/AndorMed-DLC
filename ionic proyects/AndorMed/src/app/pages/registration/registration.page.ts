@@ -7,22 +7,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-  registrationForm!: FormGroup;
+  registrationForm: FormGroup;
   selectedUserType!: string;
 
   constructor(private formBuilder: FormBuilder) {
-  }
-
-  ngOnInit() {
-    this.buildRegistrationForm();
-  }
-
-  buildRegistrationForm() {
     this.registrationForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       // Add other fields for each user type
     });
+  }
+
+  ngOnInit() {
+    // No se requiere ninguna lógica adicional en el método ngOnInit en este caso
   }
 
   register() {
@@ -39,9 +36,18 @@ export class RegistrationPage implements OnInit {
         case 'admin':
           // Handle admin registration
           break;
+        default:
+          // Handle default case if necessary
+          break;
       }
     } else {
-      this.registrationForm.markAllAsTouched();
+      this.markFormGroupTouched(this.registrationForm);
     }
+  }
+
+  markFormGroupTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+    });
   }
 }
