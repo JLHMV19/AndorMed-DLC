@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ServicesService } from '../../services/services.service';
+import { AuthGuard } from 'src/app/services/auth.guard';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginPage implements OnInit {
   loginForm!: FormGroup; // Add an exclamation mark to declare the property without initializer
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private servicio: ServicesService) {}
 
   ngOnInit() {
     this.buildLoginForm();
@@ -22,12 +24,14 @@ export class LoginPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
-  
+
 
   login() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      this.router.navigate(['/start', this.loginForm.value]);
+      // Llamar al método login() del servicio para establecer isLoggedIn en true
+      this.servicio.login();
+      this.router.navigate(['/start']);
     } else {
       this.loginForm.markAllAsTouched();
     }
@@ -35,6 +39,4 @@ export class LoginPage implements OnInit {
 
   navigateToForgotPassword() {
     this.router.navigate(['/forgot-password']);
-  }
-
-}
+  }}
