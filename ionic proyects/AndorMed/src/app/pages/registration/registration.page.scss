@@ -4,6 +4,7 @@
     align-items: center;
     padding: 20px;
     height: 100%;
+    margin-bottom: 20px; /* Agrega un margen inferior adicional */
   }
   
   .registration-title {
@@ -17,24 +18,24 @@
     margin-bottom: 20px;
   }
   
-  .registration-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    flex-grow: 1;
-  }
-  
   .registration-form {
     width: 100%;
     max-width: 400px;
     margin-bottom: 20px;
   }
   
+  .registration-form.patient-form {
+    margin-bottom: 80px; /* Ajusta el margen inferior solo para el formulario de tipo "patient" */
+  }
+  
+  .registration-form ion-item {
+    margin-bottom: 10px;
+  }
+  
   ion-button {
     margin-top: 20px;
     margin-bottom: 20px;
-  }  
+  }
   
   .form-field {
     margin-bottom: 15px;
@@ -42,6 +43,18 @@
   
   .registration-options ion-segment-button {
     --background-checked: #3880ff;
+    --color-checked: #ffffff; /* Cambia el color del texto cuando el botón está seleccionado */
+    --color: #ffffff; /* Cambia el color del texto cuando el botón no está seleccionado */
+  }
+  .extra-space {
+    height: 80px; /* Ajusta la altura según tus necesidades */
   }
 
+  .date-of-birth-field {
+    margin-bottom: 20px; /* Agrega un margen inferior para separar del siguiente campo */
+  }
+  
+  .date-of-birth-field ion-item {
+    margin-bottom: 10px; /* Agrega un margen inferior al ion-item para separar del selector de fecha */
+  }
   

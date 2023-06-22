@@ -10,7 +10,9 @@ export class RegistrationPage implements OnInit {
   registrationForm!: FormGroup;
   selectedUserType!: string;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {
+    this.selectedUserType = 'patient';
+  }
 
   ngOnInit() {
     this.buildRegistrationForm();
