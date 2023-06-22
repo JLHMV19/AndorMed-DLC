@@ -3,11 +3,12 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
+        <ion-button>
+          <img src="assets/testlogo.png" alt="Logo" class="logo" />
+          Andormed
+        </ion-button>
       </ion-buttons>
-      <ion-title>
-        <img src="assets/testlogo.png" alt="Logo" class="logo" />
-        <span class="title-text">Andormed</span>
-      </ion-title>
+      <ion-title></ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-menu contentId="main-content">
@@ -18,9 +19,6 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-list>
-        <ion-item routerLink="">
-          <ion-label>Home</ion-label>
-        </ion-item>
         <ion-item routerLink="/registration">
           <ion-label>Sign-up</ion-label>
         </ion-item>

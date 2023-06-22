@@ -26,17 +26,22 @@
   text-decoration: none;
 }
 
-ion-title {
-  display: flex;
-  align-items: center;
-}
-
 .logo {
-  width: 32px; /* Ajusta el tamaño del logo según sea necesario */
-  height: 32px;
-  margin-right: 8px; /* Ajusta el margen derecho según sea necesario */
+  width: 30px; /* Ajusta el tamaño del logo según sea necesario */
+  height: 30px;
+  margin-left: auto; /* Margen izquierdo automático para alinear a la derecha */
 }
 
 .title-text {
-  font-size: 18px; /* Ajusta el tamaño de fuente según sea necesario */
+  margin-right: auto; /* Margen derecho automático para alinear a la izquierda */
 }
+
+ion-title {
+  display: flex;
+  justify-content: flex-end; /* Alinear elementos al final */
+  align-items: center; /* Centrar verticalmente */
+}
+
+
+
+
