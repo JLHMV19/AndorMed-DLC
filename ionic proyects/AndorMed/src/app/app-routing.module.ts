@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ScannerComponent } from './components/scanner/scanner.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -18,11 +19,11 @@ const routes: Routes = [
   },
   {
     path: 'start',
-    loadChildren: () => import('./pages/start/start.module').then( m => m.StartPageModule)
+    loadChildren: () => import('./pages/start/start.module').then( m => m.StartPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
   },
   {
     path: 'not-found',
