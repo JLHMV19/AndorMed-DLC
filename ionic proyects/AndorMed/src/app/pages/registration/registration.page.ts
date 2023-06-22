@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistrationPage implements OnInit {
   registrationForm!: FormGroup;
-  selectedUserType: string = 'patient';
+  selectedUserType!: string;
 
   constructor(private formBuilder: FormBuilder) {}
 

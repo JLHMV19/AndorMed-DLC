@@ -23,8 +23,6 @@
     align-items: center;
     justify-content: flex-start;
     flex-grow: 1;
-    overflow-y: auto;
-    max-height: calc(100% - 240px); /* Adjust the value as needed */
   }
   
   .registration-form {
@@ -33,16 +31,10 @@
     margin-bottom: 20px;
   }
   
-  .date-of-birth-field ion-item {
-    --min-height: 70px;
-    margin-bottom: 15px;
-  }
-  
   ion-button {
     margin-top: 20px;
     margin-bottom: 20px;
   }  
-  
   
   .form-field {
     margin-bottom: 15px;
