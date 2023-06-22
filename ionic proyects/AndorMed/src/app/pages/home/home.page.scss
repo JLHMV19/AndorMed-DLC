@@ -25,3 +25,18 @@
 #container a {
   text-decoration: none;
 }
+
+ion-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 32px; /* Ajusta el tamaño del logo según sea necesario */
+  height: 32px;
+  margin-right: 8px; /* Ajusta el margen derecho según sea necesario */
+}
+
+.title-text {
+  font-size: 18px; /* Ajusta el tamaño de fuente según sea necesario */
+}
