@@ -1,0 +1,54 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .login-title {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  
+  .forgot-password-container {
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+  
+  .login-form ion-button {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .form-field {
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-message {
+    margin-top: 0.5rem;
+    color: red;
+  }
+  
+  .message-space {
+    height: 1.5rem; /* Establece la altura deseada para el espacio reservado */
+  }
+  
+  ion-input {
+    display: block;
+    width: 100%;
+    height: 2.5rem; /* Establece la altura deseada para los campos de entrada */
+  }
+  
+  ion-content {
+    --ion-padding-top: 0;
+    --ion-padding-bottom: 0;
+    --ion-padding-start: 0;
+    --ion-padding-end: 0;
+  }
+  

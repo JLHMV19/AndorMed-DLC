@@ -1,0 +1,55 @@
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .registration-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .registration-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .registration-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100% - 240px); /* Adjust the value as needed */
+  }
+  
+  .registration-form {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  .date-of-birth-field ion-item {
+    --min-height: 70px;
+    margin-bottom: 15px;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }  
+  
+  
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  .registration-options ion-segment-button {
+    --background-checked: #3880ff;
+  }
+
+  
