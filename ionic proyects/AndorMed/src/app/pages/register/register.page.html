@@ -1,0 +1,210 @@
+<ion-content class="ion-padding" [fullscreen]="true" scrollY="true">
+  <div class="registration-container">
+    <div class="registration-title">
+      <h2>Crea tu cuenta de AndorMed</h2>
+      <p>Selecciona un perfil para crear tu cuenta en AndorMed.</p>
+    </div>
+
+    <div class="registration-options">
+      <ion-segment [(ngModel)]="selectedUserType">
+        <ion-segment-button value="patient">
+          <ion-label>Patient</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="doctor">
+          <ion-label>Doctor</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="admin">
+          <ion-label>Admin</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div class="registration-form patient-form" *ngIf="selectedUserType === 'patient'">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h2 class="registration-title">Patient Registration</h2>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Full Name</ion-label>
+            <ion-input type="text" formControlName="fullName"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="date-of-birth-field">
+          <ion-item>
+            <ion-label position="floating" style="margin-bottom: 10px;">Date of Birth</ion-label>
+            <ion-input type="date" formControlName="dateOfBirth"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>               
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Gender</ion-label>
+            <ion-input type="text" formControlName="gender"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Residential Address</ion-label>
+            <ion-input type="text" formControlName="address"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-input type="tel" formControlName="phoneNumber"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <!-- Optional additional fields for allergies, current medications, insurance information, etc. -->
+
+        <ion-button expand="full" type="submit" [disabled]="registerForm.invalid || registerForm.pending">
+          Register
+        </ion-button>
+
+        <!-- Login link -->
+        <div class="extra-space"></div>
+      </form>
+    </div>
+
+    <div class="registration-form" *ngIf="selectedUserType === 'doctor'">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h2 class="registration-title">Doctor Registration</h2>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Full Name</ion-label>
+            <ion-input type="text" formControlName="fullName"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Medical Speciality</ion-label>
+            <ion-input type="text" formControlName="speciality"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Office Address</ion-label>
+            <ion-input type="text" formControlName="officeAddress"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-input type="tel" formControlName="phoneNumber"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <!-- Additional fields for medical license number, academic and professional information, certifications, etc. -->
+
+        <ion-button expand="full" type="submit" [disabled]="registerForm.invalid || registerForm.pending">
+          Register
+        </ion-button>
+
+        <!-- Login link -->
+      </form>
+    </div>
+
+    <div class="registration-form" *ngIf="selectedUserType === 'admin'">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h2 class="registration-title">Administrator Registration</h2>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Full Name</ion-label>
+            <ion-input type="text" formControlName="fullName"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Work Address</ion-label>
+            <ion-input type="text" formControlName="workAddress"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-input type="tel" formControlName="phoneNumber"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <ion-button expand="full" type="submit" [disabled]="registerForm.invalid || registerForm.pending">
+          Register
+        </ion-button>
+
+        <div class="ion-text-center">
+          <p class="ion-text-small ion-color">Already have an AndorMed account? <a routerLink="/login" class="ion-text-bold">Log in</a></p>
+        </div>
+      </form> 
+    </div>
+
+  </div>
+</ion-content>
