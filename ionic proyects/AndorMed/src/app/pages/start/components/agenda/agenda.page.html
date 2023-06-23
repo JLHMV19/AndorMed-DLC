@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agenda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agenda</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6">
+          <ion-card (click)="goToCalendar()">
+            <ion-card-header>
+              <ion-card-title>Herramienta de Agenda</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Visualiza citas y eventos registrados en el software.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" size-md="6">
+          <ion-card (click)="goToNotes()">
+            <ion-card-header>
+              <ion-card-title>Herramienta de Notas</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Agrega notas a los expedientes médicos registrados en el sistema de software.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-md="6">
+          <ion-card (click)="goToEmailAutomation()">
+            <ion-card-header>
+              <ion-card-title>Automatización de Correo</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Programa fácilmente correos electrónicos basados en eventos registrados en la agenda.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" size-md="6">
+          <ion-card (click)="goToRemindersView()">
+            <ion-card-header>
+              <ion-card-title>Vista de Recordatorios</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Muestra los recordatorios del día basados en la agenda.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-content>
