@@ -16,6 +16,28 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  position: relative; /* Agrega posición relativa para el seudoelemento */
+}
+
+/* Agrega un seudoelemento para la línea negra en la parte inferior */
+.registration-options::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+/* Ajusta el color del texto de las opciones seleccionadas y no seleccionadas */
+.registration-options ion-segment-button {
+  --background-checked: #3880ff; /* Cambia el color de fondo cuando el botón está seleccionado */
+  color: black; /* Cambia el color del texto cuando el botón no está seleccionado */
+}
+
+.registration-options ion-segment-button[aria-checked="true"] {
+  color: white; /* Cambia el color del texto cuando el botón está seleccionado */
 }
 
 .registration-form {
@@ -39,10 +61,6 @@ ion-button {
 
 .form-field {
   margin-bottom: 15px;
-}
-
-.registration-options ion-segment-button {
-  --background-checked: #3880ff;
 }
 
 .date-of-birth-field {

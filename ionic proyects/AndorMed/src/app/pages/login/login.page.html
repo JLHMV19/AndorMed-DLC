@@ -1,24 +1,24 @@
 
 <ion-content class="ion-padding" [fullscreen]="true" scrollY="false">
-    <div class="login-container">
-      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
-        <h2 class="login-title">Log in to AndorMed</h2>
-  
-        <div class="form-field">
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="email" formControlName="email"></ion-input>
-          </ion-item>
-          <div class="field-validation" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-            <p class="error-message" ion-color="danger" *ngIf="loginForm.get('email')?.errors?.['required']">
-              (Email is required)
-            </p>
-            <p class="error-message" ion-color="danger" *ngIf="loginForm.get('email')?.errors?.['email'] && !loginForm.get('email')?.errors?.['required']">
-              (Invalid email)
-            </p>
-          </div>
+  <div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+      <h2 class="login-title">Log in to AndorMed</h2>
+
+      <div class="form-field">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" formControlName="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"></ion-input>
+        </ion-item>
+        <div class="field-validation" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <p class="error-message" ion-color="danger" *ngIf="loginForm.get('email')?.errors?.['required']">
+            (Email is required)
+          </p>
+          <p class="error-message" ion-color="danger" *ngIf="loginForm.get('email')?.errors?.['pattern'] && !loginForm.get('email')?.errors?.['required']">
+            (Invalid email format)
+          </p>
         </div>
-  
+      </div>
+
         <div class="form-field">
           <ion-item>
             <ion-label position="floating">Password</ion-label>
@@ -28,19 +28,18 @@
             <p class="error-message" ion-color="danger">(Password is required)</p>
           </div>
         </div>
-  
+
         <div class="forgot-password-container">
           <a class="ion-color ion-text-sm" routerLink="/forgot-password">Forgot password?</a>
         </div>
-  
+
         <ion-button expand="full" type="submit" [disabled]="loginForm.invalid || loginForm.pending">
           Login
         </ion-button>
-  
+
         <div class="ion-text-center">
           <p class="ion-text-small ion-color">Don't have an account? <a routerLink="/registration" class="ion-text-bold">Sign Up</a></p>
         </div>
       </form>
     </div>
   </ion-content>
-  
