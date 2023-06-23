@@ -1,72 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>start</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">start</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12" size-md="6">
-          <!-- Card 1 (Vertical, Left) -->
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Card Title 1</ion-card-title>
-              <ion-card-subtitle>Card Subtitle 1</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Content 1
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" size-md="6" order-md="3">
-          <!-- Card 3 (Horizontal, Center) -->
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Card Title 3</ion-card-title>
-              <ion-card-subtitle>Card Subtitle 3</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Content 3
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12" size-md="6" order-md="2">
-          <!-- Card 2 (Vertical, Right) -->
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Card Title 2</ion-card-title>
-              <ion-card-subtitle>Card Subtitle 2</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Content 2
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" size-md="6" order-md="4">
-          <!-- Card 4 (Horizontal, Center) -->
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Card Title 4</ion-card-title>
-              <ion-card-subtitle>Card Subtitle 4</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Content 4
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-content>
-  
-
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Citas</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <a (click)="goToAgenda()" style="cursor: pointer;">
+              Content for Citas Card
+            </a>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Pacientes</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <a (click)="goToPatients()" style="cursor: pointer;">
+              Content for Pacientes Card
+            </a>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Recordatorios</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <a (click)="goToReminders()" style="cursor: pointer;">
+              Content for Recordatorios Card
+            </a>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Otra Tarjeta</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <a (click)="goToAnotherPage()" style="cursor: pointer;">
+              Content for Another Card
+            </a>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

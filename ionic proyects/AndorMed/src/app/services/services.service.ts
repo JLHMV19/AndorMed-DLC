@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ServicesService {
 
-  public isLoggedIn = false;
+  public isLoggedIn = true;
 
   login() {
     // Lógica de inicio de sesión...
