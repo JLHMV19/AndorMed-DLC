@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +12,7 @@ export class RegistrationPage implements OnInit {
   registrationForm: FormGroup;
   selectedUserType: string = 'patient';
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router : Router ,private authService: AuthService) {
     this.registrationForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
@@ -37,37 +39,34 @@ export class RegistrationPage implements OnInit {
   }
 
   handleRegistration() {
-    switch (this.selectedUserType) {
-      case 'patient':
-        this.registerPatient();
-        break;
-      case 'doctor':
-        this.registerDoctor();
-        break;
-      case 'admin':
-        this.registerAdmin();
-        break;
-      default:
-        // Handle default case if necessary
-        break;
-    }
+    const formData = {
+      type: this.selectedUserType,
+      nombre: this.registrationForm.value.fullName,
+      fechadeNacimiento: this.registrationForm.value.dateOfBirth,
+      genero: this.registrationForm.value.dateOfBirth,
+      direccion: this.registrationForm.value.address,
+      telefono: this.registrationForm.value.phoneNumber,
+      correo: this.registrationForm.value.email,
+      contraseña: this.registrationForm.value.password,
+      // Agrega aquí los campos adicionales al objeto formData
+    };
+
+    this.authService.register(formData).subscribe(
+      (response: any) => {
+        console.log(response);
+        // Aquí puedes manejar la respuesta del servidor después de registrar exitosamente
+          this.router.navigate(['/login']);
+      },
+      (error) => {
+        console.error(error);
+        // Aquí puedes manejar errores de registro
+      }
+    );
   }
 
   markFormGroupTouched(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach(control => {
       control.markAsTouched();
     });
-  }
-
-  registerPatient() {
-    // Handle patient registration logic
-  }
-
-  registerDoctor() {
-    // Handle doctor registration logic
-  }
-
-  registerAdmin() {
-    // Handle admin registration logic
   }
 }
