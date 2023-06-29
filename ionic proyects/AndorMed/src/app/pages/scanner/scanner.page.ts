@@ -8,12 +8,10 @@ import { PLATFORM_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-scanner',
-  templateUrl: './scanner.component.html',
-  styleUrls: ['./scanner.component.scss'],
-  imports: [CommonModule],
-  standalone: true,
+  templateUrl: './scanner.page.html',
+  styleUrls: ['./scanner.page.scss'],
 })
-export class ScannerComponent implements AfterViewInit, OnDestroy {
+export class ScannerPage implements AfterViewInit, OnDestroy {
   @ViewChild('videoElement', { static: false }) videoElement!: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas', { static: true }) canvas!: ElementRef<HTMLCanvasElement>;
 
