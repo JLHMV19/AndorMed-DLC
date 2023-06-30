@@ -19,7 +19,11 @@ const routes: Routes = [
   {
     path: 'reminders',
     loadChildren: () => import('./components/reminders/reminders.module').then( m => m.RemindersPageModule)
-  }
+  },
+   {
+    path: 'scanner',
+    loadChildren: () => import('./components/scanner/scanner.module').then( m => m.ScannerPageModule)
+   }
 ];
 
 @NgModule({
