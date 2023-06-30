@@ -3,39 +3,50 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 8px;
+  padding: 16px;
 }
 
 .video--container {
-  padding: 10px;
+  padding: 16px;
 }
 
 .video--container video {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .float-button {
-  float: right;
-  position: relative;
-  transform: translate(133px, 149px);
+  position: absolute;
+  top: 16px;
+  right: 16px;
   z-index: 999;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .qr-info {
-  background-color: #000000;
+  background-image: linear-gradient(45deg, #000000, #333333);
+  color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
 }
 
+
 .qr-info h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
 .qr-info p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .message--container {
@@ -46,4 +57,11 @@
 .message--container a {
   word-wrap: break-word;
   word-break: break-all;
+  color: #000000;
+  text-decoration: underline;
 }
+
+.message--container a:hover {
+  color: #555555;
+}
+
