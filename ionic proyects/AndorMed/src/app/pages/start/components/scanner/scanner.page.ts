@@ -2,8 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 import { VIDEO_CONFIG } from './scanner.const';
 import { Subject } from 'rxjs';
 import { default as jsQR } from 'jsqr';
-import * as QRCode from 'qrcode';
-import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
 import { PLATFORM_ID, Inject } from '@angular/core';
 
 @Component({
@@ -21,7 +21,7 @@ export class ScannerPage implements AfterViewInit, OnDestroy {
   qrData: string | undefined;
   qrScanned: boolean = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) {}
 
   ngAfterViewInit(): void {
     this.prepareScanner();
@@ -80,23 +80,6 @@ export class ScannerPage implements AfterViewInit, OnDestroy {
     }
   }
 
-  generateQRCode(): void {
-    const text = 'https://www.example.com'; // Texto o enlace que deseas codificar en el QR
-    const options = {
-      width: 300, // Anchura en píxeles
-      height: 300, // Altura en píxeles
-    };
-
-    QRCode.toDataURL(text, options, (err, url) => {
-      if (err) {
-        console.error('Error al generar el código QR:', err);
-      } else {
-        console.log('Código QR generado con éxito.');
-        console.log(url); // URL del código QR generado en formato de imagen base64
-      }
-    });
-  }
-
   isURL(value: string): boolean {
     const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
     return urlPattern.test(value);
@@ -120,9 +103,6 @@ export class ScannerPage implements AfterViewInit, OnDestroy {
       return false;
     }
   }
-  
-  
-  
 
   ngOnDestroy(): void {
     this.videoStream.getTracks().forEach((track) => track.stop());

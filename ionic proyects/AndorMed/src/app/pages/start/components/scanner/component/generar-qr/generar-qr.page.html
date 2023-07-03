@@ -1,0 +1,17 @@
+<ion-card class="scanner-card">
+  <!-- ... -->
+  <div class="message--container">
+    <!-- ... -->
+    <form (submit)="generateQRCode($event)">
+      <ion-item>
+        <ion-label position="floating">Texto</ion-label>
+        <ion-input [(ngModel)]="qrText" name="qrText" required></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="full">Generar QR</ion-button>
+    </form>
+    <div class="generated-qr" *ngIf="generatedQRCode">
+      <img [src]="generatedQRCode" alt="Código QR generado">
+    </div>
+  </div>
+  <!-- ... -->
+</ion-card>

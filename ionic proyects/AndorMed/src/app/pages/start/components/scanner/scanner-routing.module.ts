@@ -7,7 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: ScannerPage
+  },
+  {
+    path: 'generar-qr',
+    loadChildren: () => import('./component/generar-qr/generar-qr.module').then( m => m.GenerarQrPageModule)
   }
+
+
 ];
 
 @NgModule({
