@@ -40,18 +40,22 @@ export class ScannerPage implements AfterViewInit, OnDestroy {
     this.currentFacingMode = this.currentFacingMode === 'environment' ? 'user' : 'environment';
     this.config.video.facingMode = this.currentFacingMode;
     this.startScanner();
-  }
+  }  
 
   async startScanner(): Promise<void> {
     try {
+      // Detener la transmisión de video anterior
+      if (this.videoStream) {
+        this.videoStream.getTracks().forEach((track) => track.stop());
+      }
+  
       this.videoStream = await navigator.mediaDevices.getUserMedia(this.config);
       this.videoElement.nativeElement.srcObject = this.videoStream;
       this.spyCamera();
     } catch (error) {
-      console.error('Error starting the scanner:', error);
+      console.error('Error al iniciar el escáner:', error);
     }
   }
-  
 
   spyCamera(): void {
     if (this.videoElement.nativeElement) {
@@ -76,7 +80,7 @@ export class ScannerPage implements AfterViewInit, OnDestroy {
       // Continuar el escaneo en bucle
       setTimeout(() => {
         this.spyCamera();
-      }, 500);
+      }, 1000);
     }
   }
 
