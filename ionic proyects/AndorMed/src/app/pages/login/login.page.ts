@@ -3,14 +3,13 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginForm!: FormGroup; // Add an exclamation mark to declare the property without initializer
+  loginForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {}
 
@@ -25,21 +24,22 @@ export class LoginPage implements OnInit {
     });
   }
 
-
   login() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password).subscribe(
         (response: any) => {
-          // Maneja la respuesta del servidor después de iniciar sesión exitosamente
-          console.log(response);
+          console.log(response.message); // Imprime el mensaje de inicio de sesión
+          console.log(response.user); // Imprime el objeto de usuario
           
           if (response.message === 'Inicio de sesión exitoso') {
-            // Redirige al usuario a la página de inicio solo si la autenticación es exitosa
+            // Almacena el token en el servicio AuthService
+            this.authService.setToken(response.token);
+            // Redirige al usuario a la página de inicio si la autenticación es exitosa
             this.router.navigate(['/start']);
           } else {
             // Maneja el caso en que las credenciales sean inválidas
-            console.error('Invalid credentials');
+            console.error('Credenciales inválidas');
           }
         },
         (error) => {
@@ -51,10 +51,8 @@ export class LoginPage implements OnInit {
       this.loginForm.markAllAsTouched();
     }
   }
-  
-  
-  
 
   navigateToForgotPassword() {
     this.router.navigate(['/forgot-password']);
-  }}
+  }
+}
