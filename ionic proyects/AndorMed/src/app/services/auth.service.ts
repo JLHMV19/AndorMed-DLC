@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'http://localhost:3000'; // URL del servidor Node.js
+  apiUrl = 'https://andormed-backend.onrender.com'; // URL del servidor Node.js
   apiUrl2 = 'http://localhost/api'; // URL del servidor Node.js
   private token: string = '';
 
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   register(formData: any) {
-    return this.http.post(`${this.apiUrl2}/register.php`, formData);
+    return this.http.post(`${this.apiUrl2}/register`, formData);
   }
 
   getUserDetails(): Observable<any> {
