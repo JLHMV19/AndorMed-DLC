@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   register(formData: any) {
-    return this.http.post(`${this.apiUrl2}/register`, formData);
+    return this.http.post(`${this.apiUrl}/register`, formData);
   }
 
   getUserDetails(): Observable<any> {
