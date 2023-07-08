@@ -8,6 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AuthService {
   apiUrl = 'http://localhost:3000'; // URL del servidor Node.js
+  apiUrl2 = 'http://localhost/api'; // URL del servidor Node.js
   private token: string = '';
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
@@ -21,7 +22,7 @@ export class AuthService {
   }
 
   register(formData: any) {
-    return this.http.post(`${this.apiUrl}/register.php`, formData);
+    return this.http.post(`${this.apiUrl2}/register.php`, formData);
   }
 
   getUserDetails(): Observable<any> {
