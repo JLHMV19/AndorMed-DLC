@@ -43,7 +43,7 @@ export class RegistrationPage implements OnInit {
       type: this.selectedUserType,
       nombre: this.registrationForm.value.fullName,
       fechadeNacimiento: this.registrationForm.value.dateOfBirth,
-      genero: this.registrationForm.value.dateOfBirth,
+      genero: this.registrationForm.value.gender,
       direccion: this.registrationForm.value.address,
       telefono: this.registrationForm.value.phoneNumber,
       correo: this.registrationForm.value.email,
