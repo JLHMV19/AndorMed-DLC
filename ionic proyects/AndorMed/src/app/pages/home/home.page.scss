@@ -42,11 +42,15 @@ ion-title {
   align-items: center; /* Centrar verticalmente */
 }
 
-.Card1 {
+.Card1, .Card2, .Card3 {
   height: auto;
   width: 25%;
-  margin: left;
+  margin: 0 auto; /* Esto centrará horizontalmente las cards */
   padding: 10px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Esto centrará verticalmente el contenido dentro de las cards */
+  align-items: center; /* Esto centrará horizontalmente el contenido dentro de las cards */
 }
+
 
