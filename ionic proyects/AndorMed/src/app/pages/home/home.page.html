@@ -1,83 +1,75 @@
 <ion-app>
   <ion-header>
+    <!-- Agregamos un botón de menú para una mejor experiencia de usuario en dispositivos móviles -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-toolbar>
+      <!-- Movemos el logo a la izquierda del encabezado -->
       <ion-buttons slot="start">
-        <ion-button routerLink="/home" >
-          <img src="assets/LARGELOGO2-removebg-preview.png" alt="Logo" class="logo" />
-        </ion-button>
-      </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-button routerLink="/registration">
-          <ion-label>Sign-up</ion-label>
-        </ion-button>
-        <ion-button routerLink="/login">
-          <ion-label>Login</ion-label>
+        <ion-button routerLink="/home">
+          <ion-img src="assets/LARGELOGO2-removebg-preview.png" alt="Logo" class="logo"></ion-img>
         </ion-button>
       </ion-buttons>
       <ion-title></ion-title>
+      <ion-buttons slot="end">
+        <!-- Conservamos los enlaces a las páginas de registro y inicio de sesión -->
+        <ion-button routerLink="/registration">
+          <ion-icon name="person-add"></ion-icon>
+          <ion-label>Sign-up</ion-label>
+        </ion-button>
+        <ion-button routerLink="/login">
+          <ion-icon name="log-in"></ion-icon>
+          <ion-label>Login</ion-label>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="ion-padding">
-    <ion-img
-  src="https://storage.googleapis.com/dpw/app/uploads/2020/03/css-borda-responsiva-background-repeat.jpg"
-  alt="The Wisconsin State Capitol building in Madison, WI at night"
-  class="background-image"></ion-img>
+    <!-- Usamos una imagen de fondo con un diseño más atractivo y adaptativo -->
+    <ion-img src="https://storage.googleapis.com/dpw/app/uploads/2020/03/css-borda-responsiva-background-repeat.jpg" alt="The Wisconsin State Capitol building in Madison, WI at night" class="background-image"></ion-img>
     
+    <!-- Tarjeta principal con el logo de ANDORMED -->
     <ion-card class="Card1">
       <img alt="Logo" src="assets/LOGOW.png" />
       <ion-card-header>
         <ion-card-title>ANDORMED</ion-card-title>
         <ion-card-subtitle>Smart Medical System</ion-card-subtitle>
       </ion-card-header>
-      <br>
-    </ion-card>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <!-- About Us Section -->
-    <ion-card class="Card2">
-      <ion-card-header>
-        <ion-card-title>About Us</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <!-- Add your About Us content here -->
-        <p>Welcome to ANDORMED! We are a smart medical system dedicated to revolutionizing the healthcare industry...</p>
-      </ion-card-content>
-    </ion-card>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <!-- Contact Us Section -->
-    <ion-card class="Card3">
-      <ion-card-header>
-        <ion-card-title>Contact Us</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <!-- Add your Contact Us content here -->
-        <p>If you have any questions or inquiries, feel free to reach out to us:</p>
-        <p>Email: contact@andormed.com</p>
-        <p>Phone: +1 (123) 456-7890</p>
-      </ion-card-content>
     </ion-card>
 
+    <!-- Secciones About Us y Contact Us dentro de un ion-grid para una mejor disposición -->
+    <ion-grid>
+      <!-- Sección About Us -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="Card2">
+            <ion-card-header>
+              <ion-card-title>About Us</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Welcome to ANDORMED! We are a smart medical system dedicated to revolutionizing the healthcare industry...</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      
+      <!-- Sección Contact Us -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="Card3">
+            <ion-card-header>
+              <ion-card-title>Contact Us</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>If you have any questions or inquiries, feel free to reach out to us:</p>
+              <p>Email: contact@andormed.com</p>
+              <p>Phone: +1 (123) 456-7890</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
 </ion-app>
