@@ -10,17 +10,18 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegistrationPage implements OnInit {
   registrationForm: FormGroup;
-  selectedUserType: string = 'patient';
+  privilegioOptions = [
+    { value: 'patient', label: 'Paciente' },
+    { value: 'doctor', label: 'Doctor' },
+    { value: 'admin', label: 'Administrador' },
+    // Puedes agregar más opciones según tus necesidades
+  ];
 
-  constructor(private formBuilder: FormBuilder, private router : Router ,private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
     this.registrationForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      gender: ['', Validators.required],
-      address: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      nombreUsuario: ['', Validators.required],
+      contraseña: ['', Validators.required],
+      privilegio: ['', Validators.required],
     });
   }
 
@@ -40,22 +41,18 @@ export class RegistrationPage implements OnInit {
 
   handleRegistration() {
     const formData = {
-      type: this.selectedUserType,
-      nombre: this.registrationForm.value.fullName,
-      fechadeNacimiento: this.registrationForm.value.dateOfBirth,
-      genero: this.registrationForm.value.gender,
-      direccion: this.registrationForm.value.address,
-      telefono: this.registrationForm.value.phoneNumber,
-      correo: this.registrationForm.value.email,
-      contraseña: this.registrationForm.value.password,
-      // Agrega aquí los campos adicionales al objeto formData
+      nombreUsuario: this.registrationForm.value.nombreUsuario,
+      contraseña: this.registrationForm.value.contraseña,
+      privilegio: this.registrationForm.value.privilegio,
+      // Agrega aquí los campos adicionales al objeto formData si es necesario
     };
 
+    // Llama al servicio de autenticación para registrar al usuario
     this.authService.register(formData).subscribe(
       (response: any) => {
         console.log(response);
         // Aquí puedes manejar la respuesta del servidor después de registrar exitosamente
-          this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
       },
       (error) => {
         console.error(error);
@@ -70,3 +67,4 @@ export class RegistrationPage implements OnInit {
     });
   }
 }
+
