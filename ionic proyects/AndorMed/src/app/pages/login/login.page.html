@@ -6,16 +6,13 @@
 
       <div class="form-field">
         <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email" formControlName="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+          <ion-label position="floating">User</ion-label>
+          <ion-input type="text" formControlName="user">
           </ion-input>          
         </ion-item>
-        <div class="field-validation" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-          <p class="error-message" ion-color="danger" *ngIf="loginForm.get('email')?.errors?.['required']">
-            (Email is required)
-          </p>
-          <p class="error-message" ion-color="danger" *ngIf="loginForm.get('email')?.errors?.['pattern'] && !loginForm.get('email')?.errors?.['required']">
-            (Invalid email format)
+        <div class="field-validation" *ngIf="loginForm.get('user')?.invalid && loginForm.get('user')?.touched">
+          <p class="error-message" ion-color="danger" *ngIf="loginForm.get('user')?.errors?.['required']">
+            (User is required)
           </p>
         </div>
       </div>

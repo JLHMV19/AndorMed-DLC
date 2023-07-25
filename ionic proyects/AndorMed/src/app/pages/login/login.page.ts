@@ -19,15 +19,15 @@ export class LoginPage implements OnInit {
 
   buildLoginForm() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      user: ['', [Validators.required, Validators.minLength(6)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   login() {
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-      this.authService.login(email, password).subscribe(
+      const { user, password } = this.loginForm.value;
+      this.authService.login(user, password).subscribe(
         (response: any) => {
           console.log(response.message); // Imprime el mensaje de inicio de sesión
           console.log(response.user); // Imprime el objeto de usuario

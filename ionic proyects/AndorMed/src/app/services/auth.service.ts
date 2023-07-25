@@ -17,12 +17,12 @@ export class AuthService {
     this.token = token;
   }
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl2}/login`, { correo: email, contraseña: password });
+  login(user: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl2}/login`, { usuario: user, contraseña: password });
   }
 
   register(formData: any) {
-    return this.http.post(`${this.apiUrl2}/userRegistration`, formData);
+    return this.http.post(`${this.apiUrl2}/usuario`, formData);
   }
 
   getUserDetails(): Observable<any> {
