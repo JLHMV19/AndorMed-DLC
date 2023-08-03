@@ -1,9 +1,94 @@
-ion-list {
-    padding: 10px;
+/* Agrega un margen inferior adicional */
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    margin-bottom: 20px;
   }
   
-  ion-item {
-    border: 1px solid #ccc;
+  /* Estilos para el título */
+  .registration-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para las opciones */
+  .registration-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  /* Agrega un seudoelemento para la línea negra en la parte inferior */
+  .registration-options::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+  
+  /* Ajusta el color del texto de las opciones seleccionadas y no seleccionadas */
+  .registration-options ion-segment-button {
+    --background-checked: #3880ff; /* Cambia el color de fondo cuando el botón está seleccionado */
+    --color-checked: #ffffff; /* Cambia el color del texto cuando el botón está seleccionado */
+    --color: #ffffff; /* Cambia el color del texto cuando el botón no está seleccionado */
+  }
+  
+  /* Ajusta el formulario */
+  .registration-form {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  /* Ajusta el margen inferior solo para el formulario de tipo "patient" */
+  .registration-form.patient-form {
+    margin-bottom: 80px;
+  }
+  
+  /* Ajusta el margen inferior de los elementos del formulario */
+  .registration-form ion-item {
     margin-bottom: 10px;
+  }
+  
+  /* Estilos para los botones */
+  ion-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Agrega un margen inferior para separar del siguiente campo */
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  /* Agrega un margen inferior al ion-item para separar del selector de fecha */
+  .date-of-birth-field ion-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Ajusta la altura según tus necesidades */
+  .extra-space {
+    height: 80px;
+  }
+  
+  ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: auto;
   }
   

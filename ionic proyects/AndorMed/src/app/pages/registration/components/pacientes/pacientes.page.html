@@ -1,19 +1,55 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Página de Vista de Pacientes
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding" [fullscreen]="true" scrollY="true">
+  <div class="registration-container">
+    <div class="registration-title">
+      <h2>Crea tu cuenta de AndorMed</h2>
+      <p>Selecciona un perfil para crear tu cuenta en AndorMed.</p>
+    </div>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let paciente of pacientes">
-      <ion-label>
-        <h2>{{ paciente.nombre }}</h2>
-        <p>Edad: {{ paciente.edad }}</p>
-        <p>Fecha de ingreso: {{ paciente.fechaIngreso }}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+    <div class="registration-form">
+      <form [formGroup]="pacienteForm">
+        <h2 class="registration-title">Registro de Paciente</h2>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Nombre del paciente</ion-label>
+            <ion-input type="text" formControlName="nombrepacientes"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">RFC del paciente</ion-label>
+            <ion-input type="text" formControlName="RFCpaciente"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-textarea formControlName="direccion"></ion-textarea>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Alergias</ion-label>
+            <ion-textarea formControlName="alegias"></ion-textarea>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <ion-button expand="full" type="submit" [disabled]="pacienteForm.invalid || pacienteForm.pending">
+          Registrar
+        </ion-button>
+
+        <div class="ion-text-center">
+          <p class="ion-text-small ion-color">¿Ya tienes una cuenta en AndorMed? <a routerLink="/login" class="ion-text-bold">Inicia sesión</a></p>
+        </div>
+      </form>
+      <div class="extra-space"></div>
+    </div>
+  </div>
 </ion-content>

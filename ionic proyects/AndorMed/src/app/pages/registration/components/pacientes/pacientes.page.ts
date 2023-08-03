@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pacientes',
@@ -6,11 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['pacientes.page.scss'],
 })
 export class PacientesPage {
-  pacientes = [
-    { nombre: 'Juan Pérez', edad: 30, fechaIngreso: '2023-08-02' },
-    { nombre: 'María Gómez', edad: 25, fechaIngreso: '2023-08-01' },
-    // Agrega más objetos para más pacientes
-  ];
+  pacienteForm: FormGroup;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {
+    this.pacienteForm = this.formBuilder.group({
+      nombrepacientes: ['', Validators.required],
+      RFCpaciente: [''],
+      direccion: [''],
+      alegias: [''],
+    });
+  }
+
+  onSubmit() {
+    if (this.pacienteForm.valid) {
+      // Aquí puedes realizar una solicitud HTTP a tu servidor para guardar los datos en la base de datos
+      console.log('Paciente registrado:', this.pacienteForm.value);
+      // Limpia el formulario después de enviarlo
+      this.pacienteForm.reset();
+    }
+  }
 }
