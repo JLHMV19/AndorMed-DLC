@@ -35,10 +35,7 @@ const routes: Routes = [
     path: 'scanner',
     loadChildren: () => import('./pages/start/components/scanner/scanner.module').then( m => m.ScannerPageModule)
   },
-  {
-    path: 'patient-register',
-    loadChildren: () => import('./pages/patient-register/patient-register.module').then( m => m.PatientRegisterPageModule)
-  },
+
 
 
 
