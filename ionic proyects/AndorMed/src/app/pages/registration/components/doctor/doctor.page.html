@@ -6,7 +6,7 @@
     </div>
 
     <div class="registration-form">
-      <form [formGroup]="doctorForm">
+      <form [formGroup]="doctorForm" (ngSubmit)="saveDetails()">
         <h2 class="registration-title">Informacion adicional</h2>
 
         <div class="form-field">
@@ -34,7 +34,7 @@
         </div>
 
         <ion-button expand="full" type="submit" [disabled]="doctorForm.invalid || doctorForm.pending">
-          Register
+          Guardar
         </ion-button>
 
         <div class="ion-text-center">
