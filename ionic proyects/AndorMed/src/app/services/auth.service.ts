@@ -28,17 +28,21 @@ export class AuthService {
   getUserDetails(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
+      Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
     });
     const options = { headers: headers };
   
     return this.http.get(`${this.apiUrl}/getUserByToken`, options);
   }
 
-  SaveDoctorDetails(formData: any) {
+  saveDoctorDetails(formData: any): Observable<any> {
+    // Cambia esto por el método correcto para obtener el ID del usuario
+    const userId = this.getUserId(); 
+    formData.usuarios_idusuarios = userId;
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
+      Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
     });
     const options = { headers: headers };
     return this.http.post(`${this.apiUrl2}/doctor`, formData, options);
@@ -52,5 +56,13 @@ export class AuthService {
     // Elimina el token del almacenamiento local
     localStorage.removeItem('token');
   }
-}
 
+  getUserId(): number {
+    // Agrega aquí la lógica para obtener el ID del usuario actual
+    // Por ejemplo, si tienes la información del usuario en el token, puedes extraer el ID desde allí
+    // O si tienes un servicio que te proporciona el ID del usuario, puedes usarlo aquí
+    // Ejemplo hipotético:
+    // return this.http.get<number>(`${this.apiUrl2}/getUserID`, { headers: { Authorization: `Bearer ${this.token}` } });
+    return 0; // Cambia esto al valor real del ID del usuario
+  }
+}
