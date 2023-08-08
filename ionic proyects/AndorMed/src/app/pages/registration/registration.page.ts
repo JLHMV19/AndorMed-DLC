@@ -23,7 +23,6 @@ export class RegistrationPage implements OnInit {
       contraseña: ['', Validators.required],
       privilegio: ['', Validators.required],
       correo: ['', [Validators.required, Validators.minLength(5)]],
-
     });
   }
 
@@ -47,7 +46,6 @@ export class RegistrationPage implements OnInit {
       contraseña: this.registrationForm.value.contraseña,
       privilegio: this.registrationForm.value.privilegio,
       correo: this.registrationForm.value.correo,
-
       // Agrega aquí los campos adicionales al objeto formData si es necesario
     };
 
@@ -57,7 +55,7 @@ export class RegistrationPage implements OnInit {
         console.log(response);
         // Aquí puedes manejar la respuesta del servidor después de registrar exitosamente
         if (formData.privilegio === 'doctor') {
-          this.router.navigate(['/doctor']); // Redirige a la página de registro de doctores si se registró como doctor
+          this.router.navigate(['/doctor-registration']); // Redirige a la página de registro de doctores
         } else if (formData.privilegio === 'patient') {
           this.router.navigate(['/paciente']); // Agrega la ruta a la página del paciente si se registra como paciente
         } else if (formData.privilegio === 'admin') {
