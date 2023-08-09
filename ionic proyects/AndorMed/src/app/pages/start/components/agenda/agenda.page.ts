@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agenda',
@@ -7,22 +6,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./agenda.page.scss'],
 })
 export class AgendaPage {
+  fechaCita!: string;
+  estado!: string;
+  idPaciente!: number;
+  idDoctor!: number;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
-  goToCalendar() {
-    this.router.navigate(['/calendar']); // Reemplaza '/calendar' con la ruta real hacia la herramienta de agenda
-  }
-
-  goToNotes() {
-    this.router.navigate(['/notes']); // Reemplaza '/notes' con la ruta real hacia la herramienta de notas
-  }
-
-  goToEmailAutomation() {
-    this.router.navigate(['/email-automation']); // Reemplaza '/email-automation' con la ruta real hacia la interfaz de automatización de correo
-  }
-
-  goToRemindersView() {
-    this.router.navigate(['/reminders-view']); // Reemplaza '/reminders-view' con la ruta real hacia la vista de recordatorios
+  agendarCita() {
+    // Implementa aquí la lógica para agendar la cita
+    // Puedes usar las propiedades this.fechaCita, this.estado, this.idPaciente, this.idDoctor
+    // para obtener los valores del formulario
   }
 }

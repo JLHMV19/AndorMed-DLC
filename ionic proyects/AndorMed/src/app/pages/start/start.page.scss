@@ -1,0 +1,19 @@
+/* Agrega estilos CSS para el formulario */
+.form-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+  }
+  
+  .form-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Personaliza más los estilos según tus preferencias */
+  
