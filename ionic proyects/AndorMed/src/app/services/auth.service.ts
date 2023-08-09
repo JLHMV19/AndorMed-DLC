@@ -7,8 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'https://andormed-backend.onrender.com'; // URL del servidor Node.js
-  apiUrl2 = 'http://localhost:3000'; // URL del servidor Node.js
+  apiUrl = 'http://localhost:3000'; // URL del servidor Node.js
   private token: string = '';
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
@@ -18,11 +17,11 @@ export class AuthService {
   }
 
   login(user: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl2}/login`, { nombreUsuario: user, contraseña: password });
+    return this.http.post(`${this.apiUrl}/login`, { nombreUsuario: user, contraseña: password });
   }
 
   register(formData: any) {
-    return this.http.post(`${this.apiUrl2}/usuario`, formData);
+    return this.http.post(`${this.apiUrl}/usuario`, formData);
   }
 
   getUserDetails(): Observable<any> {
@@ -45,7 +44,7 @@ export class AuthService {
       Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
     });
     const options = { headers: headers };
-    return this.http.post(`${this.apiUrl2}/doctor`, formData, options);
+    return this.http.post(`${this.apiUrl}/doctor`, formData, options);
   }
 
   mostrarPacientes(): Observable<any> {

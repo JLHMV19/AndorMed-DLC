@@ -22,6 +22,7 @@ export class DoctorPage implements OnInit {
       professionalLicence: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
+  
 
   ngOnInit() {}
 
