@@ -16,10 +16,8 @@ const routes: Routes = [
     path: 'patients',
     loadChildren: () => import('./components/patients/patients.module').then( m => m.PatientsPageModule)
   },
-  {
-    path: 'reminders',
-    loadChildren: () => import('./components/reminders/reminders.module').then( m => m.RemindersPageModule)
-  },
+ 
+
    {
     path: 'scanner',
     loadChildren: () => import('./components/scanner/scanner.module').then( m => m.ScannerPageModule)
