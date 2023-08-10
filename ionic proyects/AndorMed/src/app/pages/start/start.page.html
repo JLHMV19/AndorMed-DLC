@@ -1,84 +1,44 @@
-<ion-toolbar>
+<ion-content class="welcome-container">
   <ion-card-title>
     ¡Bienvenido, {{ userName?.nombre }}!
   </ion-card-title>
-</ion-toolbar>
-
-
-
-<ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size="12" size-md="4">
-        <ion-card>
+      <ion-col size="12" size-md="4" class="card-column">
+        <ion-card class="minimal-card">
           <ion-card-header>
-            <ion-card-title>Citas</ion-card-title>
+            <ion-card-title>Agendar Citas</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <a routerLink="./agenda" style="cursor: pointer;">
+            <a routerLink="./agenda" class="minimal-link">
               Agendar Citas
-            </a>
-          </ion-card-content>
-          <ion-card-content>
-            <a routerLink="./agenda" style="cursor: pointer;">
-              Ver Citas
-            </a>
-          </ion-card-content>
-          <ion-card-content>
-            <a routerLink="./agenda" style="cursor: pointer;">
-              Editar Citas
-            </a>
-          </ion-card-content>
-          <ion-card-content>
-            <a routerLink="./agenda" style="cursor: pointer;">
-              Eliminar Citas
-            </a>
-          </ion-card-content>
-          <ion-card-content>
-            <a routerLink="./agenda" style="cursor: pointer;">
-              Buscar Citas
             </a>
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col size="12" size-md="4">
-        <ion-card>
+      <ion-col size="12" size-md="4" class="card-column">
+        <ion-card class="minimal-card">
           <ion-card-header>
             <ion-card-title>Pacientes</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <a routerLink="./patients" style="cursor: pointer;">
+            <a routerLink="./patients" class="minimal-link">
               Content for Pacientes Card
             </a>
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col size="12" size-md="4">
-        <ion-card>
+      <ion-col size="12" size-md="4" class="card-column">
+        <ion-card class="minimal-card">
           <ion-card-header>
-            <ion-card-title>Recordatorios</ion-card-title>
+            <ion-card-title>QR-Scanner</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <a routerLink="./reminders" style="cursor: pointer;">
-              Content for Recordatorios Card
+            <a routerLink="./scanner" class="minimal-link">
+              Content for QR-Scanner Card
             </a>
           </ion-card-content>
         </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="12" size-md="4">
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>QR-Scanner</ion-card-title>
-            </ion-card-header>
-            
-            <ion-card-content>
-              <a routerLink="./scanner" style="cursor: pointer;">
-                Content for QR-Scanner Card
-              </a>
-            </ion-card-content>
-          </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
