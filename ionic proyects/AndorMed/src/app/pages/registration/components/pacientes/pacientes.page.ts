@@ -27,7 +27,7 @@ export class PacientesPage {
   saveDetails() {
     if (this.pacienteForm.valid) {
       this.handleSaveDetails();
-      this.navCtrl.navigateRoot('/success'); // Cambia la ruta a la que desees redirigir
+      this.navCtrl.navigateRoot('/sucess'); // Cambia la ruta a la que desees redirigir
     } else {
       this.markFormGroupTouched(this.pacienteForm);
     }
