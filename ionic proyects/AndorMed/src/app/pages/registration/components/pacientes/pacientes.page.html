@@ -5,15 +5,15 @@
       <p>Selecciona un perfil para crear tu cuenta en AndorMed.</p>
     </div>
 
-    <div class="registration-form">
-      <form [formGroup]="pacienteForm">
+    <div class="registration-form" >
+      <form [formGroup]="pacienteForm" (ngSubmit)="saveDetails()">
         <h2 class="registration-title">Registro de Paciente</h2>
 
         <div class="form-field">
           <ion-item>
             <ion-label position="floating">Nombre del paciente</ion-label>
             <ion-input type="text" formControlName="nombrepacientes"></ion-input>
-          </ion-item>
+          </ion-item>   
           <!-- Validation messages -->
         </div>
 

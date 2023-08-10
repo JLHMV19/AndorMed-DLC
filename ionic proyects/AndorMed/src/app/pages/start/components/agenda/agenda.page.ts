@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-agenda',
@@ -6,16 +7,42 @@ import { Component } from '@angular/core';
   styleUrls: ['./agenda.page.scss'],
 })
 export class AgendaPage {
-  fechaCita!: string;
-  estado!: string;
+  fechacitas!: string;
+  status!: string;
   idPaciente!: number;
   idDoctor!: number;
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   agendarCita() {
-    // Implementa aquí la lógica para agendar la cita
-    // Puedes usar las propiedades this.fechaCita, this.estado, this.idPaciente, this.idDoctor
-    // para obtener los valores del formulario
+    // Verifica que tengas todos los datos necesarios antes de continuar
+    if (this.fechacitas && this.status /*&& this.idPaciente && this.idDoctor*/) {
+      console.log(this.fechacitas);
+      const citaData = {
+        fechacitas: this.fechacitas,
+        
+        status: this.status,
+        
+        /*
+        idPaciente: this.idPaciente,
+        idDoctor: this.idDoctor
+        */
+      };
+
+      // Llama al método del AuthService para agendar la cita
+      this.authService.agendarCita(citaData).subscribe(
+        (response: any) => {
+          console.log('Cita agendada:', response);
+          // Aquí puedes manejar la respuesta del servidor después de agendar exitosamente
+        },
+        (error) => {
+          console.error('Error al agendar la cita:', error);
+          // Aquí puedes manejar errores de agendamiento de citas
+        }
+      );
+    } else {
+      console.error('Faltan datos para agendar la cita');
+      // Manejar el caso en que falten datos en el formulario
+    }
   }
 }

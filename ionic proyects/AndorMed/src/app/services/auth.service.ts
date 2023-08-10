@@ -29,6 +29,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
     });
+
     const options = { headers: headers };
   
     return this.http.get(`${this.apiUrl}/getUserByToken`, options);
@@ -45,6 +46,32 @@ export class AuthService {
     });
     const options = { headers: headers };
     return this.http.post(`${this.apiUrl}/doctor`, formData, options);
+  }
+
+  savePacienteDetails(formData: any): Observable<any> {
+    // Cambia esto por el método correcto para obtener el ID del usuario
+    const userId = this.getUserId();
+    formData.usuarios_idusuarios = userId;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
+    });
+    const options = { headers: headers };
+    return this.http.post(`${this.apiUrl}/paciente`, formData, options);
+  }
+
+  agendarCita(citaData: any): Observable<any> {
+    // Cambia esto por el método correcto para obtener el ID del usuario
+    const userId = this.getUserId(); 
+    citaData.usuarios_idusuarios = userId;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
+    });
+    const options = { headers: headers };
+    return this.http.post(`${this.apiUrl}/citas`, citaData, options);
   }
 
   mostrarPacientes(): Observable<any> {

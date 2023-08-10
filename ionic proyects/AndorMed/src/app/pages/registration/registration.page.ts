@@ -57,7 +57,7 @@ export class RegistrationPage implements OnInit {
         if (formData.privilegio === 'doctor') {
           this.router.navigate(['/doctor-registration']); // Redirige a la página de registro de doctores
         } else if (formData.privilegio === 'patient') {
-          this.router.navigate(['/paciente']); // Agrega la ruta a la página del paciente si se registra como paciente
+          this.router.navigate(['/pacientes-registration']); // Agrega la ruta a la página del paciente si se registra como paciente
         } else if (formData.privilegio === 'admin') {
           this.router.navigate(['/administrador']); // Agrega la ruta a la página del administrador si se registra como administrador
         }
