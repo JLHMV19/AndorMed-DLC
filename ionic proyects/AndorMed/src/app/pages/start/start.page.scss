@@ -34,6 +34,7 @@
 
 .minimal-card ion-card-content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
@@ -51,9 +52,20 @@
   color: #000000;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .minimal-link:hover {
   background-color: #3078a8;
   color: #f0f0f0;
+}
+
+/* Nuevos estilos para centrar los textos en ion-content */
+ion-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
 }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../../services/auth.service';
+import { NavController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-doctor',
@@ -14,7 +17,8 @@ export class DoctorPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private navCtrl: NavController
   ) {
     this.doctorForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(5)]],
@@ -29,6 +33,7 @@ export class DoctorPage implements OnInit {
   saveDetails() {
     if (this.doctorForm.valid) {
       this.handleSaveDetails();
+      this.navCtrl.navigateRoot('/sucess');
     } else {
       this.markFormGroupTouched(this.doctorForm);
     }

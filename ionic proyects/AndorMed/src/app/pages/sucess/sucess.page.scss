@@ -1,0 +1,36 @@
+/* Estilos para la página de éxito */
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+  }
+  .success-icon {
+    font-size: 5rem;
+    color: #4caf50;
+  }
+  
+  .success-title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .success-message {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #555;
+  }
+  
+  .back-to-home-button {
+    margin-top: 1rem;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .back-to-home-button:hover {
+    background-color: #3078a8;
+    color: #f0f0f0;
+  }

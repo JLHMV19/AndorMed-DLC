@@ -8,15 +8,7 @@ const routes: Routes = [
     path: '',
     component: DoctorPage
   },
-  {
-    path: 'success',
-    loadChildren: () => import('./success/success.module').then( m => m.SuccessPageModule)
-  },
-  {
-    path: 'success',
-    loadChildren: () => import('./success/success.module').then( m => m.SuccessPageModule)
-  }
-
+ 
 ];
 
 @NgModule({

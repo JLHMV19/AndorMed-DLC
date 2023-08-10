@@ -44,10 +44,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registration/components/pacientes/pacientes.module').then( m => m.PacientesPageModule)
   },
 
+  
   {
     path: 'sucess',
-    loadChildren: () => import('./pages/registration/components/doctor/success/success.module').then( m => m.SuccessPageModule)
+    loadChildren: () => import('./pages/sucess/sucess.module').then( m => m.SucessPageModule)
   },
+
 
 
 
