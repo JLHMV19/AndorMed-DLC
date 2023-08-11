@@ -82,7 +82,7 @@
   
   /* Estilo para las tarjetas */
   .Card1, .Card2, .Card3 {
-    width: 80%; /* Ajusta el ancho según tus necesidades */
+    width: 70%; /* Ajusta el ancho según tus necesidades */
     max-width: 400px;
     margin: 20px auto; /* Centra horizontalmente con un margen entre tarjetas */
     padding: 20px;
@@ -106,8 +106,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 120%;
-    height: 120%; /* Ajusta la altura para cubrir toda la pantalla */
+    width: 130%;
+    height: 200%; /* Ajusta la altura para cubrir toda la pantalla */
     background-image: url('https://storage.googleapis.com/dpw/app/uploads/2020/03/css-borda-responsiva-background-repeat.jpg');
     background-size: cover;
     z-index: -1;
