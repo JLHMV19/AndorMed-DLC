@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'https://andormedbackend1.onrender.com/'; // URL del servidor Node.js
+  apiUrl = 'http://localhost:3000'; // URL del servidor Node.js
   private token: string = '';
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
