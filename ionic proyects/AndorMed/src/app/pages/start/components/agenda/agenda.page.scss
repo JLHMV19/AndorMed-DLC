@@ -1,45 +1,41 @@
-/* Estilos minimalistas */
-.welcome-container {
+/* Añade estos estilos al final de tu hoja de estilos CSS */
+
+/* Centrar los elementos en ion-header */
+ion-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centrar los elementos en ion-content */
+ion-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
+  align-items: center;
+  padding: 1rem;
 }
 
-.card-column {
+/* Asegurar que ion-grid esté centrado en ion-content */
+.form-grid {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  width: 100%;
 }
 
-.minimal-card {
+/* Ajustar el ancho de ion-card */
+.form-card {
   width: 80%;
   max-width: 400px;
-  padding: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  text-align: center;
 }
 
-.minimal-card ion-card-content {
+/* Asegurar que ion-card-content esté centrado */
+.form-card ion-card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-}
-
-.minimal-link {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #333;
-  transition: background-color 0.3s;
-  border-radius: 4px;
-}
-
-.minimal-link:hover {
-  background-color: #f2f2f2;
 }
