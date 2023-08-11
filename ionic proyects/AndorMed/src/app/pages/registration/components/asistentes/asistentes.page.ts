@@ -19,6 +19,8 @@ export class AsistentesPage implements OnInit {
   ) { 
     this.asistenteForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(5)]],
+      doctores_doctorId: ['', [Validators.required, Validators.minLength(5)]],
+      usuarios_idusuarios1: 'noaplica'
     });
   }
 
@@ -35,14 +37,29 @@ export class AsistentesPage implements OnInit {
 
   handleSaveDetails() {
     const formData = {
-      nombreDoctor: this.asistenteForm.value.name,
-      usuarios_idusuarios: this.authService.getUserId(), // Cambia esto por el método correcto para obtener el ID del usuario
+      nombreAsistente: this.asistenteForm.value.name,
+      doctores_doctorId: this.asistenteForm.value.doctores_doctorId,
+      usuarios_idusuarios1: 'noaplica', // Cambia esto por el método correcto para obtener el ID del usuario
     };
-}
 
-markFormGroupTouched(formGroup: FormGroup) {
-  Object.values(formGroup.controls).forEach((control) => {
-    control.markAsTouched();
-  });
-}
+    // Llama al servicio para guardar los detalles del asistente
+    this.authService.saveAsistenteDetails(formData).subscribe(
+      (response: any) => {
+        console.log(response);
+        // Aquí puedes manejar la respuesta del servidor después de guardar exitosamente
+        // Redirige a la página de éxito
+        this.router.navigate(['/success']); // Cambia la ruta a la que desees redirigir
+      },
+      (error) => {
+        console.error(error);
+        // Aquí puedes manejar errores
+      }
+    );
+  }
+
+  markFormGroupTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach((control) => {
+      control.markAsTouched();
+    });
+  }
 }

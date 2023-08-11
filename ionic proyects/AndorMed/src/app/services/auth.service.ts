@@ -91,4 +91,18 @@ export class AuthService {
     // return this.http.get<number>(`${this.apiUrl2}/getUserID`, { headers: { Authorization: `Bearer ${this.token}` } });
     return 0; // Cambia esto al valor real del ID del usuario
   }
+
+  saveAsistenteDetails(formData: any): Observable<any> {
+    // Cambia esto por el método correcto para obtener el ID del usuario
+    const userId = this.getUserId(); 
+    formData.usuarios_idusuarios = userId;
+  
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
+    });
+    const options = { headers: headers };
+    return this.http.post(`${this.apiUrl}/asistente`, formData, options);
+  }
+  
 }

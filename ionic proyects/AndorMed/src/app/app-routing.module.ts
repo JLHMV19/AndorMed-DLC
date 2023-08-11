@@ -43,8 +43,10 @@ const routes: Routes = [
     path: 'pacientes-registration',
     loadChildren: () => import('./pages/registration/components/pacientes/pacientes.module').then( m => m.PacientesPageModule)
   },
-
-  
+  {
+    path: 'asistentes-registration',
+    loadChildren: () => import('./pages/registration/components/asistentes/asistentes.module').then( m => m.AsistentesPageModule)
+  },  
   {
     path: 'sucess',
     loadChildren: () => import('./pages/sucess/sucess.module').then( m => m.SucessPageModule)
