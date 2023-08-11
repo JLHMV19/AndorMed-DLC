@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'sucess',
     loadChildren: () => import('./pages/sucess/sucess.module').then( m => m.SucessPageModule)
+  },  {
+    path: 'aboutus',
+    loadChildren: () => import('./pages/aboutus/aboutus.module').then( m => m.AboutusPageModule)
   },
+
 
 
 

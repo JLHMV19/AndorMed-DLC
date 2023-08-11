@@ -1,0 +1,117 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  .logo {
+    width: 125px; /* Ajusta el tamaño del logo según sea necesario */
+    height: 37px;
+    margin-left: auto; /* Margen izquierdo automático para alinear a la derecha */
+  }
+  
+  .title-text {
+    margin-right: auto; /* Margen derecho automático para alinear a la izquierda */
+  }
+  
+  ion-title {
+    display: flex;
+    justify-content: flex-end; /* Alinear elementos al final */
+    align-items: center; /* Centrar verticalmente */
+  }
+  
+  .Card1, .Card2, .Card3 {
+    height: auto;
+    width: 25%;
+    margin: 0 auto; /* Esto centrará horizontalmente las cards */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Esto centrará verticalmente el contenido dentro de las cards */
+    align-items: center; /* Esto centrará horizontalmente el contenido dentro de las cards */
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125%;
+    background-image: url('https://storage.googleapis.com/dpw/app/uploads/2020/03/css-borda-responsiva-background-repeat.jpg');
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.7;
+  }
+  
+  /* Centrar el contenido principal */
+  ion-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem; /* Añade espacio alrededor del contenido */
+  }
+  
+  /* Estilo para las tarjetas */
+  .Card1, .Card2, .Card3 {
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    max-width: 400px;
+    margin: 20px auto; /* Centra horizontalmente con un margen entre tarjetas */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .Card1 img {
+    width: 150px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto;
+  }
+  
+  /* Espaciado entre los elementos de texto */
+  ion-card-content p {
+    margin: 10px 0;
+  }
+  
+  /* Estilo para la imagen de fondo */
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%; /* Ajusta la altura para cubrir toda la pantalla */
+    background-image: url('https://storage.googleapis.com/dpw/app/uploads/2020/03/css-borda-responsiva-background-repeat.jpg');
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.7;
+  }
+  
+  

@@ -1,0 +1,132 @@
+<ion-app>
+  <ion-header>
+    <!-- Agregamos un botón de menú para una mejor experiencia de usuario en dispositivos móviles -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-toolbar>
+      <!-- Movemos el logo a la izquierda del encabezado -->
+      <ion-buttons slot="start">
+        <ion-button routerLink="/home">
+          <ion-img src="assets/LARGELOGO2-removebg-preview.png" alt="Logo" class="logo"></ion-img>
+        </ion-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+      <ion-buttons slot="end">
+        <!-- Conservamos los enlaces a las páginas de registro y inicio de sesión -->
+        <ion-button routerLink="/registration">
+          <ion-icon name="person-add"></ion-icon>
+          <ion-label>Sign-up</ion-label>
+        </ion-button>
+        <ion-button routerLink="/login">
+          <ion-icon name="log-in"></ion-icon>
+          <ion-label>Login</ion-label>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <!-- Usamos una imagen de fondo con un diseño más atractivo y adaptativo -->
+    <ion-img src="https://storage.googleapis.com/dpw/app/uploads/2020/03/css-borda-responsiva-background-repeat.jpg" alt="The Wisconsin State Capitol building in Madison, WI at night" class="background-image"></ion-img>
+
+    <ion-grid>
+      <!-- Sección About Us -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="Card2">
+            <ion-card-header>
+              <ion-card-title>Sobre Nosotros</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Nuestro equipo está compuesto por individuos capacitados y especializados en diferentes áreas, trabajando juntos para crear soluciones inteligentes que mejoren la calidad de la atención médica y la experiencia de los pacientes.</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+<!-- Sección About Us -->
+<!-- Sección About Us -->
+<ion-row>
+  <!-- Perfil 1 -->
+  <ion-col size="12" size-md="3">
+    <ion-card class="Card3">
+      <ion-card-header>
+        <ion-card-title>Diego Ávila Barrios</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="ContactImageCol">
+            <ion-img src="assets/Diego.jpeg" alt="Contact Image"></ion-img>
+          </ion-col>
+          <ion-col size="12" class="ContactTextCol">
+            <p>Como Scrum Master del equipo, Diego lidera nuestras iniciativas de desarrollo y asegura que nuestro proyecto avance con eficiencia. Además, despliega su creatividad y experiencia como desarrollador Front-End para dar vida a nuestra visión. Diego es un enlace clave entre el equipo y nuestros objetivos.</p>
+            <p>Email: dabgodbusiness@gmail.com</p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+  
+  <!-- Perfil 2 -->
+  <ion-col size="12" size-md="3">
+    <ion-card class="Card3">
+      <ion-card-header>
+        <ion-card-title>Eros José Balam Cruz</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="ContactImageCol">
+            <ion-img src="assets/Eros.jpeg" alt="Contact Image"></ion-img>
+          </ion-col>
+          <ion-col size="12" class="ContactTextCol">
+            <p>Eros desempeña un papel crucial como Product Owner del equipo, combinando su habilidad para coordinar el diseño con una comprensión profunda de las necesidades de la institución médica. Su experiencia en la intersección del diseño y la tecnología nos permite crear soluciones que satisfagan las demandas de nuestros usuarios.</p>
+            <p>Email: 2102153@utrivieramaya.edu.mx</p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+  
+  <!-- Perfil 3 -->
+  <ion-col size="12" size-md="3">
+    <ion-card class="Card3">
+      <ion-card-header>
+        <ion-card-title>Jefte Gadiel Miranda Martinez</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="ContactImageCol">
+            <ion-img src="assets/Jefte.jpeg" alt="Contact Image"></ion-img>
+          </ion-col>
+          <ion-col size="12" class="ContactTextCol">
+            <p>Jefte es nuestro experto en desarrollo, aportando su experiencia tanto en el ámbito Back-end como Front-end. Su habilidad para coordinar la lógica de programación es esencial para la creación de una solución integral y funcional. Su dedicación y pasión por la programación impulsan nuestro progreso.</p>
+            <p>Email: 2102195@utrivieramaya.edu.mx</p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+  
+  <!-- Perfil 4 -->
+  <ion-col size="12" size-md="3">
+    <ion-card class="Card3">
+      <ion-card-header>
+        <ion-card-title>Jorge Luis Huichapa Miranda</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="ContactImageCol">
+            <ion-img src="assets/Huichapa.jpeg" alt="Contact Image"></ion-img>
+          </ion-col>
+          <ion-col size="12" class="ContactTextCol">
+            <p>Desarollador Back-end y coordinador de base de datos.</p>
+            <p>Email: 2102053@utrivieramaya.edu.mx</p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>

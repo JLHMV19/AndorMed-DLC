@@ -8,7 +8,7 @@
       <!-- Movemos el logo a la izquierda del encabezado -->
       <ion-buttons slot="start">
         <ion-button routerLink="/home">
-          <ion-img src="assets/LARGELOGO2-removebg-preview.png" alt="Logo" class="logo"></ion-img>
+          <ion-img src="assets/LARGELOGO2-removebg-preview.png" alt="Logo" class="logo large-logo"></ion-img>
         </ion-button>
       </ion-buttons>
       <ion-title></ion-title>
@@ -27,55 +27,44 @@
   </ion-header>
 
   <ion-content class="ion-padding">
+    <!-- Usamos una imagen de fondo con un diseño más atractivo y adaptativo -->
     <ion-img src="https://storage.googleapis.com/dpw/app/uploads/2020/03/css-borda-responsiva-background-repeat.jpg" alt="The Wisconsin State Capitol building in Madison, WI at night" class="background-image"></ion-img>
+    
+    <!-- Tarjeta principal con el logo de ANDORMED -->
+    <ion-card class="Card1 large-card">
+      <img alt="Logo" src="assets/LOGOW.png" />
+      <ion-card-header>
+        <ion-card-title>ANDORMED</ion-card-title>
+        <ion-card-subtitle>Smart Medical System</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
 
-    <div class="container">
-      <ion-card class="Card1">
-        <img alt="Logo" src="assets/LOGOW.png" />
-        <ion-card-header>
-          <ion-card-title>ANDORMED</ion-card-title>
-          <ion-card-subtitle>Smart Medical System</ion-card-subtitle>
-        </ion-card-header>
-      </ion-card>
-
-      <ion-grid class="card-grid">
-        <ion-row>
-          <ion-col size="6">
-            <ion-card class="TeamCard">
-              <img alt="Team Member 1" src="assets/Eros.jpeg" />
-              <ion-card-header>
-                <ion-card-title>Team Member 1</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-          <ion-col size="6">
-            <ion-card class="TeamCard">
-              <img alt="Team Member 2" src="assets/Diego.jpeg" />
-              <ion-card-header>
-                <ion-card-title>Team Member 2</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            <ion-card class="TeamCard">
-              <img alt="Team Member 3" src="assets/Huichapa.jpeg" />
-              <ion-card-header>
-                <ion-card-title>Team Member 3</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-          <ion-col size="6">
-            <ion-card class="TeamCard">
-              <img alt="Team Member 4" src="assets/Jefte.jpeg" />
-              <ion-card-header>
-                <ion-card-title>Team Member 4</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
+    <!-- Secciones About Us y Contact Us dentro de un ion-grid para una mejor disposición -->
+    <ion-grid>
+      <!-- Sección About Us -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="Card2">
+            <ion-card-header>
+              <ion-card-title>About Us</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>¡Bienvenido a ANDORMED! Somos un sistema médico inteligente dedicado a revolucionar la industria de la atención médica...</p>
+              <ion-button routerLink="/aboutus">
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-label> ¿Quienes Somos?</ion-label>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
+
+  <!-- Footer -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title size="small">© 2023 ANDORMED. Todos los derechos reservados.</ion-title>
+    </ion-toolbar>
+  </ion-footer>
 </ion-app>
