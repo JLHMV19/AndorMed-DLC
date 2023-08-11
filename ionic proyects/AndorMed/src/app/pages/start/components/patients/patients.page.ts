@@ -8,6 +8,7 @@ import { AuthService } from '../../../../services/auth.service';
 })
 export class PatientsPage implements OnInit {
   pacientes: any[] = [];
+  
 
   constructor(private authService: AuthService) { }
 

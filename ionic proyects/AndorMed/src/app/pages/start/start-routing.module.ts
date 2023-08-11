@@ -25,7 +25,11 @@ const routes: Routes = [
   {
     path: 'generar-qr',
     loadChildren: () => import('./components/scanner/generar-qr/generar-qr.module').then( m => m.GenerarQRPageModule)
+  },  {
+    path: 'citas',
+    loadChildren: () => import('./components/citas/citas.module').then( m => m.CitasPageModule)
   }
+
 
 ];
 

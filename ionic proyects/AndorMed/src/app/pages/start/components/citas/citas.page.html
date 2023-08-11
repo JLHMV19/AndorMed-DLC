@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Citas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha de la cita</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cita of citas">
+              <td>{{cita.idcitas}}</td>
+              <td>{{ cita.fechacitas }}</td>
+              <td>{{ cita.status }}</td>
+              <td>
+                <ion-button color="danger" (click)="eliminarCita(cita.idcitas)"> <!-- Botón para eliminar -->
+                  <ion-icon name="close-circle-outline"></ion-icon> <!-- Ícono de "X" roja -->
+                </ion-button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

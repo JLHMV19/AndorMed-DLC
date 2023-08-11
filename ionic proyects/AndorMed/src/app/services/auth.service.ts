@@ -40,6 +40,14 @@ export class AuthService {
     return this.http.get(`${this.apiUrl}/paciente`);
   }
 
+  getCitas(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/citas`);
+  }
+
+  deleteCita(idcitas: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/citas/${idcitas}`);
+  }
+
   saveDoctorDetails(formData: any): Observable<any> {
     // Cambia esto por el método correcto para obtener el ID del usuario
     const userId = this.getUserId(); 

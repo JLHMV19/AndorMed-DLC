@@ -1,0 +1,32 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Agrega el borde inferior */
+    border-right: 1px solid #ddd; /* Agrega el borde derecho */
+  }
+  
+  th {
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Elimina el borde inferior y derecho de la última celda de cada fila */
+  td:last-child, th:last-child {
+    border-right: none;
+  }
+  
+  /* Elimina el borde inferior de la última fila */
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
