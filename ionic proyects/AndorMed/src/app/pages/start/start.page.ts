@@ -13,6 +13,7 @@ export class StartPage implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
+    /*
     this.authService.getUserDetails().subscribe(
       (response: any) => {
         console.log(response);
@@ -27,6 +28,7 @@ export class StartPage implements OnInit {
         console.log(error);
       }
     );
+    */
   }
   
   

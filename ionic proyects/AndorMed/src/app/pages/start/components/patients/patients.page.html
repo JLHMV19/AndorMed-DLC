@@ -10,12 +10,29 @@
       <ion-title size="large">Pacientes</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <ion-content>
     <ion-list>
-      <ion-item *ngFor="let paciente of pacientes">
-        <ion-label>{{ paciente.nombre }}</ion-label>
+      <ion-item>
+        <ion-label>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>RFC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let paciente of pacientes">
+                <td>{{ paciente.idpacientes }}</td>
+                <td>{{ paciente.nombrepacientes }}</td>
+                <td>{{ paciente.RFCpaciente }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </ion-label>
       </ion-item>
     </ion-list>
   </ion-content>
-  
 </ion-content>

@@ -24,7 +24,7 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/usuario`, formData);
   }
 
-  getUserDetails(): Observable<any> {
+  /*getUserDetails(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.token}` // Incluye el token JWT en el encabezado de autorización
@@ -33,6 +33,11 @@ export class AuthService {
     const options = { headers: headers };
   
     return this.http.get(`${this.apiUrl}/getUserByToken`, options);
+  }
+  */
+
+  getPacientes(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/paciente`);
   }
 
   saveDoctorDetails(formData: any): Observable<any> {
