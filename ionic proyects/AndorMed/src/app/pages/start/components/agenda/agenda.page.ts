@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../../services/auth.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-agenda',
@@ -12,7 +13,20 @@ export class AgendaPage {
   idPaciente!: number;
   idDoctor!: number;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private alertController: AlertController
+  ) {}
+
+  async presentSuccessAlert() {
+    const alert = await this.alertController.create({
+      header: 'Cita Agendada',
+      message: 'La cita se ha agendado correctamente.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 
   agendarCita() {
     // Verifica que tengas todos los datos necesarios antes de continuar
@@ -33,7 +47,9 @@ export class AgendaPage {
       this.authService.agendarCita(citaData).subscribe(
         (response: any) => {
           console.log('Cita agendada:', response);
+          this.presentSuccessAlert();
           // Aquí puedes manejar la respuesta del servidor después de agendar exitosamente
+          
         },
         (error) => {
           console.error('Error al agendar la cita:', error);

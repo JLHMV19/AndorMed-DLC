@@ -1,4 +1,11 @@
-
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content class="ion-padding" [fullscreen]="true" scrollY="false">
   <div class="login-container">
     <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
@@ -7,8 +14,7 @@
       <div class="form-field">
         <ion-item>
           <ion-label position="floating">User</ion-label>
-          <ion-input type="text" formControlName="user">
-          </ion-input>          
+          <ion-input type="text" formControlName="user"></ion-input>
         </ion-item>
         <div class="field-validation" *ngIf="loginForm.get('user')?.invalid && loginForm.get('user')?.touched">
           <p class="error-message" ion-color="danger" *ngIf="loginForm.get('user')?.errors?.['required']">
@@ -17,27 +23,27 @@
         </div>
       </div>
 
-        <div class="form-field">
-          <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input>
-          </ion-item>
-          <div class="field-validation" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-            <p class="error-message" ion-color="danger">(Password is required)</p>
-          </div>
+      <div class="form-field">
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <div class="field-validation" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <p class="error-message" ion-color="danger">(Password is required)</p>
         </div>
+      </div>
 
-        <div class="forgot-password-container">
-          <a class="ion-color ion-text-sm" routerLink="/forgot-password">Forgot password?</a>
-        </div>
+      <div class="forgot-password-container">
+        <a class="ion-color ion-text-sm" routerLink="/forgot-password">Forgot password?</a>
+      </div>
 
-        <ion-button expand="full" type="submit" [disabled]="loginForm.invalid || loginForm.pending">
-          Login
-        </ion-button>
+      <ion-button expand="full" type="submit" [disabled]="loginForm.invalid || loginForm.pending">
+        Login
+      </ion-button>
 
-        <div class="ion-text-center">
-          <p class="ion-text-small ion-color">Don't have an account? <a routerLink="/registration" class="ion-text-bold">Sign Up</a></p>
-        </div>
-      </form>
-    </div>
-  </ion-content>
+      <div class="ion-text-center">
+        <p class="ion-text-small ion-color">Don't have an account? <a routerLink="/registration" class="ion-text-bold">Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+</ion-content>
