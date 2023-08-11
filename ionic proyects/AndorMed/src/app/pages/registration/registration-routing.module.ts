@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     component: RegistrationPage
-  },  {
+  },
+  {
     path: 'doctor',
     loadChildren: () => import('./components/doctor/doctor.module').then( m => m.DoctorPageModule)
   },
@@ -18,7 +19,8 @@ const routes: Routes = [
   {
     path: 'asistentes',
     loadChildren: () => import('./components/asistentes/asistentes.module').then( m => m.AsistentesPageModule)
-  }
+  },
+
 
 ];
 

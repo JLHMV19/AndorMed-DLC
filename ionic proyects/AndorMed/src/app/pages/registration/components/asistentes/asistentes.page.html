@@ -1,13 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>asistentes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/registration"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro de Asistentes</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content class="ion-padding" [fullscreen]="true" scrollY="true">
+  <div class="registration-container">
+    <div class="registration-title">
+      <h2>Crea un nuevo asistente</h2>
+      <p>Ingresa el nombre del asistente que deseas registrar.</p>
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asistentes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="registration-form">
+  <!--    <form [formGroup]="asistenteForm" (ngSubmit)="saveDetails()"> --->
+        <form [formGroup]="asistenteForm" (ngSubmit)="saveDetails()">
+        <h2 class="registration-title">Información del Asistente</h2>
+
+        <div class="form-field">
+          <ion-item>
+            <ion-label position="floating">Nombre del Asistente</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Nombre del doctor</ion-label>
+            <ion-input type="text" formControlName="doctores_doctorId"></ion-input>
+          </ion-item>
+          <!-- Validation messages -->
+        </div>
+
+        <ion-button expand="full" type="submit" [disabled]="asistenteForm.invalid || asistenteForm.pending">
+          Guardar
+        </ion-button>
+      </form>
+    </div>
+  </div>
 </ion-content>

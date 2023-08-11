@@ -13,7 +13,7 @@ export class RegistrationPage implements OnInit {
   privilegioOptions = [
     { value: 'patient', label: 'Paciente' },
     { value: 'doctor', label: 'Doctor' },
-    { value: 'admin', label: 'Administrador' },
+    { value: 'asistente', label: 'Asistente' },
     // Puedes agregar más opciones según tus necesidades
   ];
 
@@ -58,8 +58,8 @@ export class RegistrationPage implements OnInit {
           this.router.navigate(['/doctor-registration']); // Redirige a la página de registro de doctores
         } else if (formData.privilegio === 'patient') {
           this.router.navigate(['/pacientes-registration']); // Agrega la ruta a la página del paciente si se registra como paciente
-        } else if (formData.privilegio === 'admin') {
-          this.router.navigate(['/administrador']); // Agrega la ruta a la página del administrador si se registra como administrador
+        } else if (formData.privilegio === 'asistente') {
+          this.router.navigate(['/asistentes-registration']); // Agrega la ruta a la página del administrador si se registra como administrador
         }
       },
       (error) => {
